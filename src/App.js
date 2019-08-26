@@ -1,9 +1,11 @@
 import React from 'react';
 
+//singlePage
+import SinglePage from './Page/';
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <SinglePage/>
   );
 }
 
