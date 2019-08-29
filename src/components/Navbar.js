@@ -30,7 +30,8 @@ const useNavStyles = makeStyles((theme, props) => ({
         width: "100%",
         fontWeight: 'bold',
         background: props => props.headerBgColor,
-        transition: 'background 0.25s ease-in'
+        transition: 'background 0.25s ease-in',
+        zIndex:1
         /* 
         boxShadow: "0 1px 8px 0px" */
     },
