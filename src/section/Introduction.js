@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { makeStyles } from "@material-ui/core/styles";
+//component
+import Cloud from '../components/Cloud';
 
 //styles
-const navbarHeight = 57;
 const stupaBg = "linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)";
 
 const useIntroStyles = makeStyles(theme => ({
-    '@keyframes movingClouds':{
-        '10%':{
-            opacity:1
-        },
-        '100%':{
-            left:'80%',        
-            opacity:0
-        }
-    },
 
     root: {
         display: "flex",
+        flexWrap: "wrap",
         justifyContent: "space-around",
         alignItems: "center",
         height: window.innerHeight,
-        marginBottom: -navbarHeight,
-        paddingBottom: navbarHeight,
+        marginBottom: props => -props.navbarHeight,
+        paddingBottom: props => props.navbarHeight,
         background: "linear-gradient(to top, #fddb92 0%, #d1fdff 100%)",
     },
     pinacle: {
@@ -50,28 +43,23 @@ const useIntroStyles = makeStyles(theme => ({
         background: stupaBg
     },
     stupa: {
-        '& i': {
-            color: "#89d9d2",
-            fontSize: "3em",
-            position: "absolute",
-            animation:"$movingClouds 30s linear infinite",
-            left:-20,
-            opacity:0,
-            transition:"opacity 0.5s ease-in"
-        }
-    },
-    
+
+    }
+
 }));
 
-export default function Introduction() {
+export default function Introduction({ navbarHeight }) {
 
-    const { root, pinacle, head, body, stupa } = useIntroStyles();
+    const { root, pinacle, head, body, stupa } = useIntroStyles({ navbarHeight });
 
     return (
         <>
         <div id="about" className={root}>
             <div className={stupa}>
-                <i class="fas fa-cloud"></i>
+                <Cloud top={50} right="80%" fontSize="3.5em" zIndex={0} delay="0s" />
+                <Cloud top={100} right="90%" fontSize="7em" zIndex={1} delay="2.5s" />
+                <Cloud top={100} right="80%" fontSize="2.5em" zIndex={0} delay="15s" />
+
                 <div className={pinacle}>
                 </div>
                 <div className={head}>
