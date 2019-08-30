@@ -1,50 +1,34 @@
 import React from 'react';
 
 //styles
-import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
-const myTheme = createMuiTheme({
-    palette: {
-        primary: {
-            main: '#AAA139',      //light, dark, contrast will be calculated from palette.primary.main
-        },
-        secondary: {
-            main: '#4D2D73'
-        }
-    }
-});
+const useNavStyles = makeStyles(theme => ({
 
-//style variables
-let paddingVar = 20;
-const navbarHeight = 57;
-
-const useNavStyles = makeStyles((theme, props) => ({
-    
     headerClass: {
         display: "flex",
+        flexWrap: "wrap",
         justifyContent: "flex-end",
         alignItems: "center",
         height: 57,
         position: "fixed",
         width: "100%",
         fontWeight: 'bold',
-        background: props => props.headerBgColor,
+        background: props => props.headerStyles.background,
         transition: 'background 0.25s ease-in',
-        zIndex:1
-        /* 
-        boxShadow: "0 1px 8px 0px" */
+        zIndex: 10
+        /*boxShadow: "0 1px 8px 0px" */
     },
     logoClass: {
         margin: "0 auto 0 20px"
     },
     navbar: {
         '& a': {
-            padding: paddingVar,
+            padding: props => props.paddingVar,
             textDecoration: "none",
-            color: "black",
+            color: props => props.headerStyles.color,
             '&:hover': {
-                color: myTheme.palette.primary.main
+                color: props => props.myTheme.palette.primary.main
             },
             '&:nth-child(4)': {
                 marginRight: "20px"
@@ -54,21 +38,26 @@ const useNavStyles = makeStyles((theme, props) => ({
 }));
 
 
-const Navbar = (props) => {
+const Navbar = ({ myTheme, paddingVar, navbarHeight }) => {
 
-    const [headerBgColor, setHeaderBgColor] = React.useState("transparent");
+    const [headerStyles, setHeaderStyles] = React.useState({
+        background: "transparent",
+        color: "black"
+    })
+    //const [headerBgColor, setHeaderBgColor] = React.useState("transparent");
 
     React.useEffect(() => {
-        window.onscroll = () => handleScroll() ;
+        window.onscroll = () => handleScroll();
     });
 
     const handleScroll = () => {
-        let headerColor;
-        headerColor = window.pageYOffset > navbarHeight ? myTheme.palette.secondary.main : "transparent";
-        setHeaderBgColor(headerColor);
+        let headerBg, headerFont;
+        headerBg = window.pageYOffset > navbarHeight ? myTheme.palette.secondary.main : "transparent";
+        headerFont = window.pageYOffset > navbarHeight ? "white" : "black";
+        setHeaderStyles({ background: headerBg, color: headerFont });
     }
 
-    const { headerClass, navbar, logoClass } = useNavStyles({headerBgColor});
+    const { headerClass, navbar, logoClass } = useNavStyles({ myTheme, headerStyles, paddingVar });
 
     return (
         <header id="header" className={headerClass} >
