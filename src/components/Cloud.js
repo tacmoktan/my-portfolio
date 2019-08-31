@@ -32,7 +32,7 @@ const Cloud = (props) => {
 
     const { cloud } = useCloudStyles(props);
 
-    return (<div className={cloud}> <i class="fas fa-cloud"></i></div>)
+    return <div className={cloud}> <i className="fas fa-cloud"></i></div>
 }
 
 export default Cloud;

@@ -4,14 +4,14 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import Navbar from '../components/Navbar';
 //section
 import Introduction from '../section/Introduction';
-import Project from '../section/Project';
+import Project from '../section/Project/';
 
 
 const myTheme = createMuiTheme({
     palette: {
         primary: {
             //main: '#AAA139',      //light, dark, contrast will be calculated from palette.primary.main
-            main:'#db7093'
+            main: '#db7093'
         },
         secondary: {
             main: '#4D2D73'
@@ -29,7 +29,7 @@ const SinglePage = () => (
     <>
     <Navbar {...styleVar} />
     <Introduction {...styleVar} />
-    <Project />
+    <Project {...styleVar} />
     </>
 );
 
