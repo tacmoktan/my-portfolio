@@ -29,11 +29,11 @@ const projectDescription = [
         sources: [
             {
                 title: 'github',
-                link:'https://github.com/tacmoktan/ProjectFrontEnd',
+                link:'https://github.com/tacmoktan/MeroPasal-frontend',
             },
             {
                 title:'netlify',
-                link:'https://final-project-trinity.netlify.com'
+                link:'http://meropasal.netlify.com/'
             }
         ], imageSrc: ''
     },
@@ -48,12 +48,9 @@ const projectDescription = [
         sources: [
             {
                 title: 'github',
-                link:'https://github.com/tacmoktan/ProjectFrontEnd',
-            },
-            {
-                title:'netlify',
-                link:'https://final-project-trinity.netlify.com'
+                link:'https://tacmoktan.github.io/CurrentWeatherApp/',
             }
+            
         ], imageSrc: ''
     },
     {
@@ -68,11 +65,7 @@ const projectDescription = [
         sources: [
             {
                 title: 'github',
-                link:'https://github.com/tacmoktan/ProjectFrontEnd',
-            },
-            {
-                title:'netlify',
-                link:'https://final-project-trinity.netlify.com'
+                link:'https://github.com/tacmoktan/Khaja-Set',
             }
         ], imageSrc: ''
     },
