@@ -1,5 +1,4 @@
 import React from 'react';
-
 //styles
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -10,32 +9,39 @@ const useNavStyles = makeStyles(theme => ({
         flexWrap: "wrap",
         justifyContent: "flex-end",
         alignItems: "center",
-        height: 57,
+        height: props => props.navbarHeight,
         position: "fixed",
         width: "100%",
         fontWeight: 'bold',
         background: props => props.headerStyles.background,
         transition: 'background 0.25s ease-in',
         zIndex: 10,
-        boxShadow: props => props.headerStyles.boxShadow
-        /*boxShadow: "0 1px 8px 0px" */
+        boxShadow: props => props.headerStyles.boxShadow,
+        [theme.breakpoints.down(650)]: {
+            justifyContent: 'center'
+        }
     },
     logoClass: {
         margin: "0 auto 0 20px"
     },
-    navbar: {
+
+    navlinks: {
         '& a': {
-            padding: props => props.paddingVar,
+            fontFamily: 'Righteous, cursive',
             textDecoration: "none",
+            textTransform: "uppercase",
+            padding: props => props.paddingVar,
             color: props => props.headerStyles.color,
             '&:hover': {
                 color: props => props.myTheme.palette.primary.main
             },
-            '&:nth-child(4)': {
-                marginRight: "20px"
-            }
-        }
+            marginRight: '2vw',
+            [theme.breakpoints.down(650)]: {
+                marginRight: 0
+            },
+        },
     }
+
 }));
 
 
@@ -45,35 +51,41 @@ const Navbar = ({ myTheme, paddingVar, navbarHeight, stupaBg }) => {
         background: "transparent",
         color: "black",
         boxShadow: "none"
-    })
-    //const [headerBgColor, setHeaderBgColor] = React.useState("transparent");
+    });
 
     React.useEffect(() => {
         window.onscroll = () => handleScroll();
     });
-
+    //handlers
     const handleScroll = () => {
         let headerBg, headerFont, boxShadow;
-        headerBg = window.pageYOffset > navbarHeight ? myTheme.palette.secondary.main : "transparent";
+        headerBg = window.pageYOffset > navbarHeight ? myTheme.palette.secondary.light : "transparent";
         headerFont = window.pageYOffset > navbarHeight ? "white" : "black";
         boxShadow = window.pageYOffset > navbarHeight ? "0 1px 5px 0 black" : "none";
-        setHeaderStyles({ background: headerBg, color: headerFont, boxShadow:boxShadow });
+        setHeaderStyles({ background: headerBg, color: headerFont, boxShadow: boxShadow });
     }
 
-    const { headerClass, navbar, logoClass } = useNavStyles({ myTheme, headerStyles, paddingVar });
+    const { headerClass, logoClass, navlinks }
+        = useNavStyles({ navbarHeight, myTheme, headerStyles, paddingVar });
+
+
 
     return (
+        <>
         <header id="header" className={headerClass} >
             <div id="logo" className={logoClass} >
                 <img src="https://via.placeholder.com/150x57" alt="logo" />
             </div>
-            <nav className={navbar}>
+
+
+            <nav className={navlinks}>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
             </nav>
+
         </header>
+        </>
     );
 }
 
