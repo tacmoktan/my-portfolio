@@ -15,13 +15,20 @@ const useProjectStyles = makeStyles(theme => ({
         marginTop: props => -props.navbarHeight,
     },
     title: {
+        
         minWidth: 300,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         fontSize: "1.5em",
         "& h1": {
-            margin: "0 10px"
+            margin: "0 10px",
+            fontFamily:'Righteous, cursive',
+            textTransform:"uppercase",
+            fontSize:'2em'
+        },
+        '& i':{
+            color:props => props.myTheme.palette.primary.main
         }
     },
     projects: {
@@ -31,20 +38,20 @@ const useProjectStyles = makeStyles(theme => ({
     }
 }));
 
-const Project = ({ navbarHeight }) => {
+const Project = ({ navbarHeight, myTheme }) => {
 
-    const { root, title, projects } = useProjectStyles({ navbarHeight });
+    const { root, title, projects } = useProjectStyles({ navbarHeight, myTheme });
 
     return (
         <section id="projects" className={root}>
             <div className={title}>
-                <i className="fas fa-project-diagram"></i><h1>Projects</h1><i className="fas fa-project-diagram"></i>
+                <i className="fas fa-tasks"></i><h1>Projects</h1><i className="fas fa-tasks"></i>
             </div>
             <div className={projects}>
                 {
-                    projectDescription.map((description, i) => {
-                        return <ProjectContainer key={'project_' + i} {...description} />
-                    })
+                    projectDescription.map((description, i) =>   
+                        <ProjectContainer key={'project_' + i} {...description} myTheme={myTheme} /> 
+                    )
                 }
             </div>
         </section>
