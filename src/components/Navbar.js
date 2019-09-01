@@ -16,7 +16,8 @@ const useNavStyles = makeStyles(theme => ({
         fontWeight: 'bold',
         background: props => props.headerStyles.background,
         transition: 'background 0.25s ease-in',
-        zIndex: 10
+        zIndex: 10,
+        boxShadow: props => props.headerStyles.boxShadow
         /*boxShadow: "0 1px 8px 0px" */
     },
     logoClass: {
@@ -38,11 +39,12 @@ const useNavStyles = makeStyles(theme => ({
 }));
 
 
-const Navbar = ({ myTheme, paddingVar, navbarHeight }) => {
+const Navbar = ({ myTheme, paddingVar, navbarHeight, stupaBg }) => {
 
     const [headerStyles, setHeaderStyles] = React.useState({
         background: "transparent",
-        color: "black"
+        color: "black",
+        boxShadow: "none"
     })
     //const [headerBgColor, setHeaderBgColor] = React.useState("transparent");
 
@@ -51,10 +53,11 @@ const Navbar = ({ myTheme, paddingVar, navbarHeight }) => {
     });
 
     const handleScroll = () => {
-        let headerBg, headerFont;
+        let headerBg, headerFont, boxShadow;
         headerBg = window.pageYOffset > navbarHeight ? myTheme.palette.secondary.main : "transparent";
         headerFont = window.pageYOffset > navbarHeight ? "white" : "black";
-        setHeaderStyles({ background: headerBg, color: headerFont });
+        boxShadow = window.pageYOffset > navbarHeight ? "0 1px 5px 0 black" : "none";
+        setHeaderStyles({ background: headerBg, color: headerFont, boxShadow:boxShadow });
     }
 
     const { headerClass, navbar, logoClass } = useNavStyles({ myTheme, headerStyles, paddingVar });

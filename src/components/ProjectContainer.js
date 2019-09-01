@@ -10,7 +10,13 @@ const useProjectStyles = makeStyles(theme => ({
         margin: "20px 0",
         boxShadow: "0 0 10px 0 #c1c1c1",
         width: '70vw',
-        minWidth: 300
+        minWidth: 300,
+        [theme.breakpoints.down(860)]:{
+            width:'90vw'
+        },
+        [theme.breakpoints.down(670)]:{
+            width:'50vw'
+        }
     },
     projectDescription: {
         minWidth: 300,
@@ -29,6 +35,7 @@ const useProjectStyles = makeStyles(theme => ({
     },
     projectAttributes: {
         margin: "10px 0",
+        padding:"0px 20px",
         /* '& h1':{
             textTransform:'uppercase'
         }, */
@@ -53,7 +60,7 @@ const ProjectContainer = ({ title, languageIcons, type, sources }) => {
                     <p>{title}</p>
                 </div>
                 <div className={projectAttributes}>
-                    <h1>Languages Implemented</h1>
+                    <h1>Languages</h1>
                     <div>
                         {
                             languageIcons.map( (iconClass, index) =>

@@ -6,7 +6,6 @@ import Navbar from '../components/Navbar';
 import Introduction from '../section/Introduction';
 import Project from '../section/Project/';
 
-
 const myTheme = createMuiTheme({
     palette: {
         primary: {
@@ -14,7 +13,8 @@ const myTheme = createMuiTheme({
             main: '#db7093'
         },
         secondary: {
-            main: '#4D2D73'
+            //main: '#4D2D73'
+            main:'#d9c694'
         }
     }
 });
@@ -23,6 +23,7 @@ const styleVar = {
     myTheme,
     paddingVar: 20,
     navbarHeight: 57,
+    stupaBg:"linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)"
 }
 
 const SinglePage = () => (

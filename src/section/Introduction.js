@@ -4,8 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 //component
 import Cloud from '../components/Cloud';
 
-//styles
-const stupaBg = "linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)";
 
 const useIntroStyles = makeStyles(theme => ({
 
@@ -22,12 +20,12 @@ const useIntroStyles = makeStyles(theme => ({
     pinacle: {
         height: 300,
         width: 250,
-        background: stupaBg,
+        background: props => props.stupaBg,
         clipPath: "polygon(50% 0, 70% 15%, 58% 30%, 100% 100%, 0 100%, 42% 30%, 30% 15%)"
     },
     head: {
         clipPath: "polygon(0 0, 100% 0, 80% 100%, 20% 100%)",
-        background: stupaBg,
+        background: props => props.stupaBg,
         height: 100,
         width: 250,
         margin: "5px 0",
@@ -38,9 +36,8 @@ const useIntroStyles = makeStyles(theme => ({
     },
     body: {
         height: 100,
-        //clipPath:"polygon(20% 0%, 80% 0%, 100% 20%, 100% 100%, 0 100%, 0% 20%);",
         clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
-        background: stupaBg
+        background: props => props.stupaBg
     },
     stupa: {
 
@@ -48,9 +45,9 @@ const useIntroStyles = makeStyles(theme => ({
 
 }));
 
-export default function Introduction({ navbarHeight }) {
+export default function Introduction({ navbarHeight, stupaBg }) {
 
-    const { root, pinacle, head, body, stupa } = useIntroStyles({ navbarHeight });
+    const { root, pinacle, head, body, stupa } = useIntroStyles({ navbarHeight, stupaBg });
 
     return (
         <>
