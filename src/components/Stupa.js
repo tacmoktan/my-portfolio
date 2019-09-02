@@ -2,12 +2,12 @@ import React from 'react';
 
 import { makeStyles } from "@material-ui/core/styles";
 
-export default ({ stupaBg, width, pinacleHeight, hb_Height }) => {
+export default ({ stupaBg, width, pinacleHeight, hb_Height , mediaWidth}) => {
 
     const responsive = {
-        width: width - 80,
-        pinacleHeight: pinacleHeight - 50,
-        hb_Height: hb_Height - 50
+        width: width - 150,
+        pinacleHeight: pinacleHeight - 150,
+        hb_Height: hb_Height - 60
     }
 
     //since styles are declared within the component so, props are used as variables directly
@@ -17,7 +17,7 @@ export default ({ stupaBg, width, pinacleHeight, hb_Height }) => {
             width: width,
             background: stupaBg,
             clipPath: "polygon(50% 0, 70% 15%, 58% 30%, 100% 100%, 0 100%, 42% 30%, 30% 15%)",
-            [theme.breakpoints.down(650)]: {
+            [theme.breakpoints.down(mediaWidth)]: {
                 height: responsive.pinacleHeight,
                 width: responsive.width
             }
@@ -32,7 +32,7 @@ export default ({ stupaBg, width, pinacleHeight, hb_Height }) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            [theme.breakpoints.down(650)]: {
+            [theme.breakpoints.down(mediaWidth)]: {
                 height: responsive.hb_Height,
                 width: responsive.width
             }
@@ -41,8 +41,8 @@ export default ({ stupaBg, width, pinacleHeight, hb_Height }) => {
             height: hb_Height,
             clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
             background: stupaBg,
-            [theme.breakpoints.down(650)]: {
-                height: responsive.hb_Height
+            [theme.breakpoints.down(mediaWidth)]: {
+                display:'none'
             }
         },
     }));
