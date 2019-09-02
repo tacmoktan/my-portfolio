@@ -16,7 +16,7 @@ const projectDescription = [
                 title:'netlify',
                 link:'https://final-project-trinity.netlify.com'
             }
-        ], imageSrc: ''
+        ], imageName: 'hamrojob.jpg'
     },
     {
         title: 'MeroPasal',
@@ -35,7 +35,7 @@ const projectDescription = [
                 title:'netlify',
                 link:'http://meropasal.netlify.com/'
             }
-        ], imageSrc: ''
+        ], imageName: 'meropasal.jpg'
     },
     {
         title: 'CurrentWeather App',
@@ -51,7 +51,7 @@ const projectDescription = [
                 link:'https://tacmoktan.github.io/CurrentWeatherApp/',
             }
             
-        ], imageSrc: ''
+        ], imageName: 'currentweather.jpg'
     },
     {
         title: 'KhajaSet',
@@ -67,7 +67,7 @@ const projectDescription = [
                 title: 'github',
                 link:'https://github.com/tacmoktan/Khaja-Set',
             }
-        ], imageSrc: ''
+        ], imageName: 'khajaset.jpg'
     },
 ]
 

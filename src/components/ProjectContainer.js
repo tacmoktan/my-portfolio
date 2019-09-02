@@ -29,8 +29,10 @@ const useProjectStyles = makeStyles(theme => ({
         }
     },
     projectImage: {
-        minWidth: 300,
+        width: 300,
+        height:300,
         order: 1,
+        overflow:'hidden',
         [theme.breakpoints.down(860)]: {
             order: 0
         }
@@ -39,9 +41,7 @@ const useProjectStyles = makeStyles(theme => ({
         margin: "10px 0",
         padding: "0px 20px",
         '& h1':{
-            
             fontFamily: 'Ubuntu Condensed, sans-serif',
-            //color:props=> props.myTheme.palette.primary.dark
         },
 
         '& div': {
@@ -54,7 +54,6 @@ const useProjectStyles = makeStyles(theme => ({
         }
     },
     chip: {
-        // cursor: "pointer",
         margin: '0 3px',
         '&:hover':{
             textDecoration:"underline"
@@ -62,7 +61,7 @@ const useProjectStyles = makeStyles(theme => ({
     }
 }));
 
-const ProjectContainer = ({ title, languageIcons, type, sources, myTheme }) => {
+const ProjectContainer = ({ title, languageIcons, type, sources, imageName, myTheme }) => {
 
     const { root, projectDescription, projectImage, projectAttributes, chip } = useProjectStyles({myTheme});
 
@@ -107,7 +106,7 @@ const ProjectContainer = ({ title, languageIcons, type, sources, myTheme }) => {
                     </div>
                 </div>
                 <div className={projectImage}>
-                    <img src="https://via.placeholder.com/300x300" alt="project" />
+                    <img src={require(`../assets/projectImages/${imageName}`)} alt="project" />
                 </div>
             </div>
         </ThemeProvider>

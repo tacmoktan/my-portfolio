@@ -10,7 +10,6 @@ import projectDescription from './ProjectDescription';
 const useProjectStyles = makeStyles(theme => ({
     root: {
         background: "linear-gradient(to bottom, #fddb92 0%, #d1fdff 100%)",
-        //height: window.innerHeight,     //innerHeight;
         paddingTop: props => props.navbarHeight,
         marginTop: props => -props.navbarHeight,
     },
