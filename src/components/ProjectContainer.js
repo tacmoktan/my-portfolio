@@ -67,7 +67,7 @@ const ProjectContainer = ({ title, languageIcons, type, sources, myTheme }) => {
     const { root, projectDescription, projectImage, projectAttributes, chip } = useProjectStyles({myTheme});
 
     return (
-        <ThemeProvider theme={myTheme} >
+        <ThemeProvider theme={myTheme}>
             <div className={root}>
                 <div className={projectDescription}>
                     <div className={projectAttributes}>

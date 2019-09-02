@@ -16,6 +16,21 @@ const myTheme = createMuiTheme({
         secondary: {
             main:'#800080'//'#E91E63' //'#d9c694' '#4D2D73'
         }
+    },
+    //to override Avatar styles after the site is being deployed
+    overrides:{
+        //StyleSheet name
+        MuiAvatar:{
+            //rule name
+            colorDefault:{
+                color:"white",
+                background:'#800080'
+            },
+            root:{
+                width:32,
+                height:32,
+            }
+        },
     }
 });
 //style variables
