@@ -94,7 +94,7 @@ const ProjectContainer = ({ title, languageIcons, type, sources, myTheme }) => {
                             sources.map((source, i) =>
                                 <a href={source.link} key={'source_' + i}>
                                     <Chip 
-                                        color="primary"
+                                        color="secondary"
                                         avatar={<Avatar> {source.title[0].toUpperCase()}</Avatar>}
                                         label={source.title}
                                         className={chip}

@@ -10,11 +10,11 @@ const myTheme = createMuiTheme({
     palette: {
         primary: {
             //main: '#AAA139',      //light, dark, contrast will be calculated from palette.primary.main
-            main: '#db7093'
+             //'#db7093',
+            main:'#89d9d2'
         },
         secondary: {
-            //main: '#4D2D73'
-            main:'#d9c694'
+            main:'#800080'//'#E91E63' //'#d9c694' '#4D2D73'
         }
     }
 });

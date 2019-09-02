@@ -28,7 +28,7 @@ const useProjectStyles = makeStyles(theme => ({
             fontSize:'2em'
         },
         '& i':{
-            color:props => props.myTheme.palette.primary.main
+            color:props => props.myTheme.palette.secondary.main
         }
     },
     projects: {
