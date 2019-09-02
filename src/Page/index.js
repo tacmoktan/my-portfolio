@@ -24,11 +24,12 @@ const myTheme = createMuiTheme({
             //rule name
             colorDefault:{
                 color:"white",
-                background:'#800080'
+                backgroundColor:'#800080'
             },
             root:{
                 width:32,
                 height:32,
+                fontSize:'1rem'
             }
         },
     }
