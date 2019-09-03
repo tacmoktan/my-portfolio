@@ -1,10 +1,8 @@
 const projectDescription = [
     {
-        title: 'HamroJob',
+        title: 'HamroJob (Frontend)',
         languageIcons: [
             'devicon-react-original-wordmark colored',
-            'devicon-ruby-plain-wordmark colored',
-            'devicon-postgresql-plain-wordmark colored'
         ],
         type: 'Academic',
         sources: [
@@ -19,7 +17,7 @@ const projectDescription = [
         ], imageName: 'hamrojob.jpg'
     },
     {
-        title: 'MeroPasal',
+        title: 'MeroPasal (Frontend)',
         languageIcons: [
             "devicon-html5-plain-wordmark colored",
             "devicon-css3-plain-wordmark colored",
