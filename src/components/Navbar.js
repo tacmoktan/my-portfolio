@@ -73,10 +73,9 @@ const Navbar = ({ myTheme, paddingVar, navbarHeight, stupaBg }) => {
     return (
         <>
         <header id="header" className={headerClass} >
-            <div id="logo" className={logoClass} >
+            {/* <div id="logo" className={logoClass} >
                 <img src="https://via.placeholder.com/150x57" alt="logo" />
-            </div>
-
+            </div> */}
 
             <nav className={navlinks}>
                 <a href="#about">About</a>

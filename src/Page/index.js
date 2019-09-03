@@ -40,7 +40,7 @@ const myTheme = createMuiTheme({
 const styleVar = {
     myTheme,
     paddingVar: 20,
-    navbarHeight: 90,   //prev 57
+    navbarHeight: 80,   //prev 90
     stupaBg:"linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)"
 }
 
