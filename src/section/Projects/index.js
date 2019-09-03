@@ -57,7 +57,7 @@ const Project = ({ navbarHeight, myTheme }) => {
                 </div>
                 <div className={viewMore}>
                     <h1>VIEW MORE ?</h1>
-                    <Button variant="contained" color="secondary" style={{ margin: 20 }}>
+                    <Button variant="contained" color="secondary" >
                         <a href="../../assets/CV/Tashi_Lama_Resume.pdf" download> Download CV </a>
                     </Button>
                 </div>
