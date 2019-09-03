@@ -2,9 +2,11 @@ import React from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 //component
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 //section
 import Introduction from '../section/Introduction';
-import Project from '../section/Project/';
+import Projects from '../section/Projects/';
+import Skills from '../section/Skills';
 
 const myTheme = createMuiTheme({
     palette: {
@@ -46,7 +48,9 @@ const SinglePage = () => (
     <>
     <Navbar {...styleVar} />
     <Introduction {...styleVar} />
-    <Project {...styleVar} />
+    <Projects {...styleVar} />
+    <Skills {...styleVar} />
+    <Footer {...styleVar}/>
     </>
 );
 
