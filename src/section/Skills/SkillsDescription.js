@@ -22,7 +22,7 @@ const skillsDescription = {
         { title: "Inkscape", iconClass: 'devicon-inkscape-plain-wordmark colored' },
         { title: "C", iconClass: 'devicon-c-plain colored' },
         { title: "C++", iconClass: 'devicon-cplusplus-plain colored' },
-        //{ title: "Node JS", iconClass: 'devicon-nodejs-plain-wordmark colored' },
+        { title: "Node JS", iconClass: 'devicon-nodejs-plain-wordmark colored' }
         //{ title: "GraphQL", iconClass: '' },
         //{ title: "MongoDB", iconClass: 'devicon-mongodb-plain-wordmark colored' },
     ]
