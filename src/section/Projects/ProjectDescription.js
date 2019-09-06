@@ -1,3 +1,9 @@
+//project images
+import HamroJob from '../../assets/projectImages/hamrojob.jpg';
+import MeroPasal from '../../assets/projectImages/meropasal.jpg';
+import CurrentWeather from '../../assets/projectImages/currentweather.jpg';
+import KhajaSet from '../../assets/projectImages/khajaset.jpg';
+
 const projectDescription = [
     {
         title: 'HamroJob (Frontend)',
@@ -14,7 +20,7 @@ const projectDescription = [
                 title:'netlify',
                 link:'https://final-project-trinity.netlify.com'
             }
-        ], imageName: 'hamrojob.jpg'
+        ], imageUrl: HamroJob
     },
     {
         title: 'MeroPasal (Frontend)',
@@ -33,7 +39,7 @@ const projectDescription = [
                 title:'netlify',
                 link:'http://meropasal.netlify.com/'
             }
-        ], imageName: 'meropasal.jpg'
+        ], imageUrl: MeroPasal
     },
     {
         title: 'CurrentWeather App',
@@ -49,7 +55,7 @@ const projectDescription = [
                 link:'https://tacmoktan.github.io/CurrentWeatherApp/',
             }
             
-        ], imageName: 'currentweather.jpg'
+        ], imageUrl: CurrentWeather
     },
     {
         title: 'KhajaSet',
@@ -65,7 +71,7 @@ const projectDescription = [
                 title: 'github',
                 link:'https://github.com/tacmoktan/Khaja-Set',
             }
-        ], imageName: 'khajaset.jpg'
+        ], imageUrl: KhajaSet
     },
 ]
 
