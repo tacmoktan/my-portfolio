@@ -24,6 +24,7 @@ const useProjectStyles = makeStyles(theme => ({
         minWidth: 300,
         order: 0,
         lineHeight: 1.5,
+        padding:"20px 0",
         [theme.breakpoints.down(860)]: {
             order: 1
         }

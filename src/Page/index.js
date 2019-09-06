@@ -16,7 +16,7 @@ const myTheme = createMuiTheme({
             main:'#89d9d2'
         },
         secondary: {
-            main:'#800080'//'#E91E63' //'#d9c694' '#4D2D73'
+            main:'#2f4f4f'//'#800080'//'#E91E63' //'#d9c694' '#4D2D73'
         }
     },
     //to override Avatar styles after the site is being deployed
