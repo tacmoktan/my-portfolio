@@ -11,27 +11,26 @@ import Skills from '../section/Skills';
 const myTheme = createMuiTheme({
     palette: {
         primary: {
-            //main: '#AAA139',      //light, dark, contrast will be calculated from palette.primary.main
-             //'#db7093',
-            main:'#89d9d2'
+            //light, dark, contrast will be calculated from palette.primary.main
+            main: '#89d9d2'
         },
         secondary: {
-            main:'#2f4f4f'//'#800080'//'#E91E63' //'#d9c694' '#4D2D73'
+            main: '#2f4f4f'
         }
     },
     //to override Avatar styles after the site is being deployed
-    overrides:{
+    overrides: {
         //StyleSheet name
-        MuiAvatar:{
+        MuiAvatar: {
             //rule name
-            colorDefault:{
-                color:"white",
-                backgroundColor:'#800080'
+            colorDefault: {
+                color: "white",
+                backgroundColor: '#2f4f4f'
             },
-            root:{
-                width:32,
-                height:32,
-                fontSize:'1rem'
+            root: {
+                width: 32,
+                height: 32,
+                fontSize: '1rem'
             }
         },
     }
@@ -41,7 +40,7 @@ const styleVar = {
     myTheme,
     paddingVar: 20,
     navbarHeight: 80,   //prev 90
-    stupaBg:"linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)"
+    stupaBg: "linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)"
 }
 
 const SinglePage = () => (
@@ -50,7 +49,7 @@ const SinglePage = () => (
     <Introduction {...styleVar} />
     <Projects {...styleVar} />
     <Skills {...styleVar} />
-    <Footer {...styleVar}/>
+    <Footer {...styleVar} />
     </>
 );
 

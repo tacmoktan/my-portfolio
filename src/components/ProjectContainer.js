@@ -32,7 +32,7 @@ const useProjectStyles = makeStyles(theme => ({
     projectImage: {
         minWidth: 300,
         width: 546,                         //width of all images
-        height: 366,
+        height: 372,
         order: 1,
         overflow: 'hidden',
         [theme.breakpoints.down(865)]: {    //project container becomes vertical
@@ -58,14 +58,16 @@ const useProjectStyles = makeStyles(theme => ({
         '& h1': {
             fontFamily: 'Ubuntu Condensed, sans-serif',
         },
-
-        '& div': {
-            '& i': {
-                fontSize: '3em'
-            }
-        },
         '& a': {
             textDecoration: "none"
+        }
+    },
+    icons: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        '& i': {
+            fontSize: '3em',
+            margin: 2
         }
     },
     chip: {
@@ -78,7 +80,7 @@ const useProjectStyles = makeStyles(theme => ({
 
 const ProjectContainer = ({ title, languageIcons, type, sources, imageUrl, myTheme }) => {
 
-    const { root, projectDescription, projectImage, projectAttributes, chip } = useProjectStyles({ myTheme });
+    const { root, projectDescription, projectImage, projectAttributes, icons, chip } = useProjectStyles({ myTheme });
 
     return (
         <ThemeProvider theme={myTheme}>
@@ -90,7 +92,7 @@ const ProjectContainer = ({ title, languageIcons, type, sources, imageUrl, myThe
                     </div>
                     <div className={projectAttributes}>
                         <h1>Languages</h1>
-                        <div>
+                        <div className={icons}>
                             {
                                 languageIcons.map((iconClass, index) =>
                                     <i key={'icon_' + index} className={iconClass}></i>
@@ -106,7 +108,7 @@ const ProjectContainer = ({ title, languageIcons, type, sources, imageUrl, myThe
                         <h1>Source</h1>
                         {
                             sources.map((source, i) =>
-                                <a href={source.link} key={'source_' + i} target="_blank">
+                                <a href={source.link} key={'source_' + i} target="_blank" rel="noopener noreferrer">
                                     <Chip
                                         color="secondary"
                                         avatar={<Avatar> {source.title[0].toUpperCase()}</Avatar>}

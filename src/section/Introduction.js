@@ -64,8 +64,8 @@ const useIntroStyles = makeStyles(theme => ({
         lineHeight: 1.5,
     },
     socialMedia: {
-        '& a':{
-            textDecoration:'none'
+        '& a': {
+            textDecoration: 'none'
         },
         '& i': {
             fontSize: '2em'
@@ -109,7 +109,7 @@ export default function Introduction({ navbarHeight, stupaBg, myTheme }) {
                     <img src={require("../assets/Tashi.jpg")} alt="profile" />
                 </div>
                 <div className={description}>
-                
+
                     <div style={{ textAlign: 'center' }}>
                         <h1>Hi! I'm Tashi Lama</h1>
                         <p>" A Frontend Developer "</p>
@@ -127,8 +127,8 @@ export default function Introduction({ navbarHeight, stupaBg, myTheme }) {
                         <p>
                             {
                                 socialMediaLinks.map((socialMedia, i) =>
-                                    <a href={socialMedia.link} key={'socialMedia_' + i} target="_blank">
-                                        <i className={socialMedia.iconClass} style={{color:socialMedia.color}}></i>
+                                    <a href={socialMedia.link} key={'socialMedia_' + i} target="_blank" rel="noopener noreferrer">
+                                        <i className={socialMedia.iconClass} style={{ color: socialMedia.color }}></i>
                                     </a>
                                 )
                             }
