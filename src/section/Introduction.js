@@ -127,7 +127,7 @@ export default function Introduction({ navbarHeight, stupaBg, myTheme }) {
                         <p>
                             {
                                 socialMediaLinks.map((socialMedia, i) =>
-                                    <a href={socialMedia.link} key={'socialMedia_' + i} >
+                                    <a href={socialMedia.link} key={'socialMedia_' + i} target="_blank">
                                         <i className={socialMedia.iconClass} style={{color:socialMedia.color}}></i>
                                     </a>
                                 )
